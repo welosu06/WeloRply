@@ -1,14 +1,14 @@
 # WeloRply — step-by-step installation
 
-**Beta v0.12.4.** The download is named **WeloRply.zip**. Chrome currently displays the extension as **Welo Reply**. They are the same application.
+**Beta v0.12.6.** The download is named **WeloRply.zip**. Chrome currently displays the extension as **Welo Reply**. They are the same application.
 
 You will install two separate components: the Welo Chrome extension, and Ollama with a local model. The model is downloaded separately; it is not inside the extension ZIP.
 
 ## Before starting
 
-Use current desktop Chrome. Ollama requires Windows 10 22H2+ or macOS 14+. The Mac helper also requires Node.js 22+. An 8 GB RAM machine with a small model is a starting target; 16 GB is recommended, not a tested minimum guarantee. Allow roughly 10 GB of free space initially; larger models need more. This package is not for phones or tablets.
+Use current desktop Chrome. Ollama requires Windows 10 22H2+ or macOS 14+. The Mac installer automatically downloads and verifies Node.js 22 when needed. An 8 GB RAM machine with a small model is a starting target; 16 GB is recommended, not a tested minimum guarantee. Allow roughly 10 GB of free space initially; larger models need more. This package is not for phones or tablets.
 
-The Mac helper has not been tested on real Mac hardware. Helper installers are unsigned. This is a beta.
+The Mac fixes were exercised on a real user device, and all three models were checked with local generation. Helper installers are unsigned. This remains a beta; run the no-post test before using it on X.
 
 ## 1. Download and extract
 
@@ -26,7 +26,7 @@ Opening a ZIP to browse its contents is not the same as extracting it. Keep the 
 2. Turn on **Developer mode** at the top right.
 3. Click **Load unpacked**.
 4. Select the extracted folder containing `manifest.json`, then click **Select folder / Open**.
-5. Confirm **Welo Reply**, version **0.12.4**, is listed and enabled.
+5. Confirm **Welo Reply**, version **0.12.6**, is listed and enabled.
 
 If Chrome reports a missing manifest, select the inner folder that directly contains `manifest.json`. Select the folder, not the JSON file or ZIP.
 
@@ -51,17 +51,27 @@ Official download links can open separate tabs when you click them.
 
 The helper registers to run when you sign in to Windows. Repairs may restart Ollama and interrupt other Ollama requests. If Windows blocks the unsigned helper, do not disable security protections; use the manual method below.
 
-## 4B. Mac setup
+## 4B. Easy Mac setup
 
-1. Download [Ollama for Mac](https://ollama.com/download/mac). Open the disk image, drag Ollama into **Applications**, and open it.
-2. To use the helper, install **Node.js 22 or newer LTS** from the [official Node.js website](https://nodejs.org/en/download). Choose the installer for your Mac's Apple Silicon or Intel architecture.
-3. Download Welo's helper package and extract it.
-4. Open **Applications → Utilities → Terminal**.
-5. Type `bash` followed by one space. Do not press Enter yet.
-6. Drag the extracted `Kur.command` file into Terminal to insert its path, then press Enter.
-7. Wait for setup to finish. Return to Welo and click **Check setup**.
+1. Download Ollama from the [official Mac page](https://ollama.com/download/mac).
+2. Open the download, move **Ollama** into **Applications**, and open it once.
+3. In Welo, choose **Setup → Download the helper setup package**. Alternatively, open **setup/welo-mac.zip** inside the main package; it is the same helper.
+4. Extract the helper ZIP too. The extension ZIP and helper ZIP are separate archives.
+5. Double-click **Kur.command** in the newly extracted helper folder. A Terminal window opens; you do not need to type a command. Use this new copy, not an old Downloads folder with a suffix such as `(2)` or `(3)`.
+6. Wait for setup messages. If needed, Node.js is downloaded from its official source and its SHA-256 checksum is checked. Keep your internet connection available.
+7. If prompted to quit Ollama, use the **Ollama icon in the Mac menu bar → Quit**. Closing only the app window does not stop the server. Let any other active model task finish first.
+8. Return to the installer Terminal and press **Enter**. Setup checks the connection and starts Ollama as needed.
+9. Wait for **Kurulum tamamlandi** (Installation completed). Press Enter to close the installer.
+10. Return to Welo and click **Check setup**. Use **Repair connection / Start Ollama** if needed.
+11. If no model is installed, proceed to section 6. If you already have one, select it without downloading it again.
 
-If a component is missing, install it from its official website and try again. For a persistent 403 on Mac, quit Ollama from its menu, then use Welo's repair button. Do not disable system security protections. The helper is not notarized or verified on real Mac hardware yet.
+**Window-based alternative:** Open **Welo Kurulum.app** from the same folder and choose **Kur (Install)**. If it asks you to quit Ollama, follow step 7 and choose **Devam (Continue)**. Run only one installer at a time.
+
+**If macOS blocks opening:** Confirm the file came from this repository. After trying to open it, check **System Settings → Privacy & Security** for the file-specific **Open Anyway** option. These installers are not Apple-signed or notarized. Do not turn off system-wide protections. If no file-specific option is available, use the manual method below.
+
+**“Microsoft Edge yardimcisi atlandi (EPERM)”** means Edge registration was skipped. Chrome installation continues; read the final result. It does not prevent Chrome setup.
+
+After a successful helper installation, Terminal does not need to stay open. The manual method below is different.
 
 ## 5. Connect without the helper
 
@@ -77,6 +87,17 @@ You should see **Connected**. If there is no installed model, continue below.
 
 ## 6. Download a model
 
+**One model is enough; you do not need all three.**
+
+| Model | Approximate download | Choice |
+| --- | --- | --- |
+| Qwen 3.5 · 0.8B | 1.2 GB | Small Qwen option, including the Mac language fixes. |
+| Qwen 3.5 · 2B | 2.7 GB | Larger Qwen option; may use more memory. |
+| Gemma 3 · 1B | 806 MB | Lightweight alternative; existing generation behavior preserved. |
+
+Sizes can vary by model revision and device. **0.8B is not 0.08B.** Larger models do not guarantee a better result for every post.
+
+
 1. Open **Models** or click **+ Download / install a model**.
 2. Start with **Qwen 3.5 · 0.8B** if you want a small initial download.
 3. Click **Download and use**. A separate installation tab opens; click its download button if prompted.
@@ -91,6 +112,9 @@ Smaller models can make grammar, language-selection, or meaning errors. Download
 2. Enter a short sample post.
 3. Click **Generate a reply only**.
 4. Wait for a response below the input. The first model load can take longer.
+5. English sample: “The new offline editor saves drafts on your device so you can keep writing without an internet connection.” Check that the reply is English.
+6. Turkish sample: “Yeni çevrimdışı editör taslakları cihazına kaydediyor, böylece internet bağlantısı olmadan da yazmaya devam edebiliyorsun.” Check that the reply is Turkish.
+7. Select each other model you intend to use and repeat. TR/EN changes the interface, not the intended reply language.
 
 This test sends nothing to X. Get this working before trying actual replies.
 
@@ -118,8 +142,10 @@ The queue waits for the final reply result. A remaining failed link produces an 
 1. Stop the queue and check any active send result.
 2. Download the new ZIP and extract it to a temporary folder.
 3. Copy its contents into the same permanent extension folder you originally loaded. Replace matching files; do not nest a new folder inside the old one.
-4. Open `chrome://extensions`, click Welo's **Reload** button, and verify version **0.12.4**.
+4. Open `chrome://extensions`, click Welo's **Reload** button, and verify version **0.12.6**.
 5. Refresh open X tabs, then close and reopen the side panel.
+
+If an older Mac helper is installed, extract the new **setup/welo-mac.zip** and run its installer once to update it. If you already installed the v4 helper and the connection works, there is no need to reinstall it. Keep your existing model downloads.
 
 Do not remove the extension merely to update it; removal may erase settings. This GitHub installation does not update automatically.
 
@@ -131,6 +157,10 @@ Do not remove the extension merely to update it; removal may erase settings. Thi
 | No toolbar icon | Pin Welo from Chrome's Extensions menu. |
 | Not connected | Open Ollama and refresh, or use Repair connection. |
 | 403 | Try repair; otherwise follow the manual connection method above. |
+| Edge skipped / EPERM | Chrome setup continues; check the final completion message. |
+| Ollama / User cancelled (-128) | Use the latest Mac helper. Quit Ollama from its menu bar icon, then press Enter / Continue in the installer. |
+| Reply language does not match | Confirm version 0.12.6, refresh X and reopen Welo. Test the selected model locally; report the model and sample post if it persists. |
+| Node.js download failed | Check the connection and retry the new installer. Read the installation log for details. |
 | No model | Download and select a local model. |
 | Model timeout | Try a smaller model, close heavy apps, and repeat the local test. |
 | Extension context invalidated | Refresh X and reopen the Welo panel. |
@@ -145,6 +175,8 @@ Do not remove the extension merely to update it; removal may erase settings. Thi
 
 Generation requests go to local Ollama at `127.0.0.1:11434`. Settings and operation records use Chrome's local extension storage. Downloads, external links, and X actions require internet. This build has no Welo licensing server or paid AI API integration.
 
-Comprehensive live-X validation is pending. The precise cause of a reported final-link stall on a user's machine is not yet verified. Recent fixes passed simulated tests; they are not a guarantee on every device.
+In the October 25, 2026 Mac check, Qwen 0.8B and 2B replied in the expected language for English and Turkish examples. Gemma 1B worked for the English example but replied in English to one Turkish sample. Review drafts before posting. The user confirmed the latest package works; this does not guarantee every device or post. Comprehensive live-X testing is not claimed.
 
 Follow [X's automation rules](https://help.x.com/en/rules-and-policies/x-automation). Features such as automated likes and website automation may conflict with those rules. No account-safety or engagement guarantees are made. Ollama and individual models have their own licenses.
+
+Official requirements: [Ollama Mac](https://ollama.com/download/mac), [Ollama Windows](https://github.com/ollama/ollama/blob/main/docs/windows.mdx).

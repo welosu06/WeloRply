@@ -1,6 +1,6 @@
 # WeloRply kurulumu — adım adım
 
-**Sürüm: 0.12.4 beta.** Eklentinin Chrome'daki adı **Welo Reply** olarak görünür. İndirdiğin dosyanın adı **WeloRply.zip**. İkisi aynı uygulamadır.
+**Sürüm: 0.12.6 beta.** Eklentinin Chrome'daki adı **Welo Reply** olarak görünür. İndirdiğin dosyanın adı **WeloRply.zip**. İkisi aynı uygulamadır.
 
 Bilgisayar konusunda deneyimli olman gerekmiyor. Aşağıdaki sırayı izle. Bir adımın sonunda yazan sonucu görmeden sonraki adıma geçme.
 
@@ -13,7 +13,7 @@ Bilgisayar konusunda deneyimli olman gerekmiyor. Aşağıdaki sırayı izle. Bir
 
 Güncel masaüstü Chrome kullan. Windows'ta Ollama için Windows 10 22H2 veya üzeri; Mac'te macOS 14 veya üzeri gerekir. 8 GB RAM küçük model için başlangıç hedefimizdir; 16 GB önerilir. Bunlar her bilgisayarda denenmiş minimumlar değildir. Yaklaşık 10 GB boş disk alanı ayır; seçtiğin modele göre daha fazlası gerekebilir. Telefon/tablet için kurulum paketi değildir.
 
-**Mac paketi gerçek Mac üzerinde henüz test edilmedi.** Yardımcı kurucular imzasızdır. Bu bir beta sürümüdür.
+Mac kurulum düzeltmeleri gerçek kullanıcı cihazında denendi; üç modelle yerel üretim kontrolü yapıldı. Yardımcı kurucular imzasızdır. Bu bir beta sürümüdür; ilk denemeyi aşağıdaki gönderimsiz test alanında yap.
 
 ## 1. Doğru ZIP dosyasını indir
 
@@ -42,7 +42,7 @@ Güncel masaüstü Chrome kullan. Windows'ta Ollama için Windows 10 22H2 veya �
 5. Bir önceki adımda çıkardığın, içinde `manifest.json` bulunan klasörü seç.
 6. **Klasör seç / Aç** düğmesine bas.
 
-**Sonuç:** Uzantılar sayfasında **Welo Reply**, sürüm **0.12.4** görünmeli. Etkinleştirme anahtarı açık olmalı.
+**Sonuç:** Uzantılar sayfasında **Welo Reply**, sürüm **0.12.6** görünmeli. Etkinleştirme anahtarı açık olmalı.
 
 “Manifest dosyası eksik” hatası çıkarsa yanlış klasörü seçmişsindir. Seçtiğin klasörün bir altındaki klasörü kontrol et. `manifest.json` dosyasını açman değil, dosyanın bulunduğu klasörü seçmen gerekiyor.
 
@@ -79,19 +79,27 @@ Yardımcı Windows oturum açılışında çalışacak şekilde kaydolur. Onarı
 
 Windows dosyayı engellerse güvenlik ayarlarını kapatma. Aşağıdaki yardımcısız yöntemi kullan.
 
-## 5B. Mac'te Ollama ve yardımcı
+## 5B. Mac'te kolay kurulum
 
-1. [Ollama Mac](https://ollama.com/download/mac) sayfasından resmî uygulamayı indir.
-2. İndirilen disk görüntüsünü aç; Ollama'yı **Applications / Uygulamalar** klasörüne taşı ve aç.
-3. Yardımcı kullanacaksan [Node.js resmî indirme sayfasından](https://nodejs.org/en/download) **22 veya daha yeni LTS** sürümünün macOS kurucusunu yükle. Cihazına uygun Apple Silicon veya Intel sürümünü seç.
-4. Welo'dan **Yardımcı kurulum paketini indir** seç ve ZIP'i çıkar.
-5. **Uygulamalar → İzlenceler → Terminal** uygulamasını aç.
-6. Terminal'e `bash` yaz ve ardından bir boşluk bırak. Henüz Enter'a basma.
-7. Çıkardığın `Kur.command` dosyasını Terminal penceresinin içine sürükle. Dosyanın yolu otomatik eklenir.
-8. Enter'a bas. Kurulum tamamlandı mesajını bekle.
-9. Welo panelinde **Kurulumu kontrol et** seç.
+1. [Ollama'nın resmî Mac sayfasını](https://ollama.com/download/mac) aç ve Mac sürümünü indir.
+2. İndirilen dosyayı aç; **Ollama** uygulamasını **Uygulamalar / Applications** klasörüne taşı. Uygulamayı bir kez aç.
+3. Welo panelinde **Kurulum → Yardımcı kurulum paketini indir** seç. Alternatif olarak ana paketin içindeki **setup → welo-mac.zip** dosyasını kullan. İkisi aynı yardımcıdır.
+4. Yardımcı ZIP'ini de çıkar. Ana Welo ZIP'i ile yardımcı ZIP'i iki ayrı dosyadır; ikisinin de çıkarılmış olması gerekir.
+5. Çıkan klasörde **Kur.command** dosyasına çift tıkla. Terminal penceresi açılması normaldir; komut yazman gerekmez. Eski indirdiğin `(2)`, `(3)` gibi klasörlerdeki kurucu yerine yeni paketin içindekini kullan.
+6. Kurucunun mesajlarını bekle. Node.js eksikse resmî kaynaktan otomatik indirilip doğrulanır; ayrıca elle kurman gerekmez. İnternet bağlantısı açık kalsın.
+7. Kurucu Ollama'dan çıkmanı isterse ekranın en üstündeki **Ollama menü simgesine → Quit / Çıkış** seçeneğine bas. **Sadece Ollama penceresinin kırmızı kapatma düğmesine basmak yeterli değildir.** Devam eden model işin varsa önce tamamlanmasını bekle.
+8. Kurulumun Terminal penceresine dön ve **Enter** tuşuna bas. Kurucu bağlantıyı yeniden kontrol eder ve gerektiğinde Ollama'yı başlatır.
+9. **Kurulum tamamlandı** mesajını görünce Enter'a basıp pencereyi kapatabilirsin.
+10. Welo paneline dön ve **Kurulumu kontrol et** düğmesine bas. Gerekirse **Bağlantıyı onar / Ollama'yı başlat** seç.
+11. “Henüz model yok” yazıyorsa kurulum bitmiştir; **7. adımdan bir model indir**. Zaten kurulu modelin varsa listeden seç.
 
-Eksik bileşen uyarısı gelirse belirtilen resmî uygulamayı kurup adımı yeniden uygula. Mac'te 403 hatası sürerse Ollama menüsünden **Quit** ile çıkıp Welo'da **Bağlantıyı onar** seç. Sistem güvenlik korumalarını devre dışı bırakma.
+**Pencereli alternatif:** Aynı klasördeki **Welo Kurulum.app** uygulamasını açıp **Kur** düğmesine basabilirsin. Ollama'dan çıkmanı istediğinde yukarıdaki 7. adımı uygula, ardından kurucuda **Devam** seç. İki kurucuyu birden çalıştırma.
+
+**macOS açılmasına izin vermiyorsa:** Dosyayı bu deponun indirme bağlantısından aldığını kontrol et. Açmayı denedikten sonra **Sistem Ayarları → Gizlilik ve Güvenlik** bölümünde bu dosyaya özel **Yine de Aç** seçeneği görünüyorsa kullan. Kurucular henüz Apple imzası/noter onayı taşımıyor. Genel güvenlik korumasını kapatma; dosyaya özel açma seçeneği yoksa 6. adımdaki yardımcısız yöntemi kullan.
+
+**“Microsoft Edge yardımcısı atlandı (EPERM)” mesajı:** Chrome kullanıyorsan bu bir engel değildir. Kurulum Chrome için devam eder. Son satırdaki sonucu kontrol et.
+
+**Sonuç:** Welo'da bağlantı hazır olmalı. Yardımcıyla kurulumda Terminal'i açık tutman gerekmez. Yardımcısız kullanımın koşulları aşağıda farklıdır.
 
 ## 6. Yardımcı olmadan bağlanma
 
@@ -111,6 +119,17 @@ Yardımcı kurmak istemiyorsan veya kurulamıyorsa:
 
 ## 7. Bir model indir
 
+**Üç modeli birden indirmen gerekmez; kullanacağın bir model yeterlidir.** Paneldeki seçenekler:
+
+| Model | Yaklaşık indirme | Seçim |
+| --- | --- | --- |
+| Qwen 3.5 · 0.8B | 1,2 GB | Küçük Qwen seçeneği. Mac dil düzeltmesini içerir. |
+| Qwen 3.5 · 2B | 2,7 GB | Daha büyük Qwen seçeneği; daha fazla kaynak kullanabilir. |
+| Gemma 3 · 1B | 806 MB | Hafif alternatif. Mevcut çalışan üretim davranışı korunmuştur. |
+
+Boyutlar sürüme ve cihaza göre değişebilir. Model adındaki **0.8B**, **0.08B** değildir. Daha büyük model her gönderide daha iyi sonuç garantisi vermez.
+
+
 1. Ana ekrana dön. **Modeller** sekmesine veya **+ Model indir / kur** düğmesine bas.
 2. İlk deneme için küçük seçenek olan **Qwen 3.5 · 0.8B** ile başlayabilirsin.
 3. **İndir ve kullan** düğmesine bas.
@@ -126,6 +145,9 @@ Küçük model daha az kaynak kullanır ama dilbilgisi veya anlam hataları yapa
 2. **Yerel modeli dene** alanına kısa bir örnek gönderi yaz.
 3. **Yalnızca yorum üret** düğmesine bas.
 4. Altında bir yorum görünmesini bekle. Modelin ilk yüklenmesi sonraki denemelerden daha uzun sürebilir.
+5. İngilizce örnek: “The new offline editor saves drafts on your device so you can keep writing without an internet connection.” Yanıtın İngilizce olduğunu kontrol et.
+6. Türkçe örnek: “Yeni çevrimdışı editör taslakları cihazına kaydediyor, böylece internet bağlantısı olmadan da yazmaya devam edebiliyorsun.” Yanıtın Türkçe olduğunu kontrol et.
+7. Başka bir model kullanacaksan listeden onu seçip aynı testi tekrarla. Arayüzü TR/EN yapmak, yorumun dilini seçmez; yorum gönderinin dilini izlemeye çalışır.
 
 **Bu düğme X'e yorum göndermez.** Önce bu testin çalıştığını gör.
 
@@ -157,8 +179,10 @@ Son linkin sonucu gelmeden “Tamamlandı” gösterilmez. Hatalı link kalırsa
 2. Yeni **WeloRply.zip** dosyasını indir ve ayrı bir geçici klasöre çıkar.
 3. Yeni dosyaları Chrome'a daha önce gösterdiğin kalıcı Welo klasörünün içine kopyala; aynı adlı dosyaları değiştir. Yeni klasörü eski klasörün içine iç içe yerleştirme.
 4. `chrome://extensions` sayfasında Welo kartının **Yenile** düğmesine bas.
-5. Sürümün **0.12.4** olduğunu kontrol et.
+5. Sürümün **0.12.6** olduğunu kontrol et.
 6. Açık X sekmelerini yenile, Welo panelini kapatıp yeniden aç.
+
+Mac'te eski yardımcı kuruluysa yeni paketin **setup/welo-mac.zip** dosyasını çıkarıp kurucuyu bir kez çalıştır; böylece yardımcı düzeltmeleri de yüklenir. v4 düzeltme paketindeki yardımcı zaten kuruluysa ve bağlantı çalışıyorsa tekrar kurman gerekmez. Kurulu modelleri yeniden indirme.
 
 Eklentiyi **Kaldır** düğmesiyle silmen gerekmez; kaldırmak ayarları kaybettirebilir. GitHub'dan yapılan bu kurulum otomatik güncellenmez.
 
@@ -170,6 +194,10 @@ Eklentiyi **Kaldır** düğmesiyle silmen gerekmez; kaldırmak ayarları kaybett
 | Welo simgesi yok | Chrome'un Uzantılar/yapboz menüsünden Welo'yu sabitle. |
 | Bağlantı yok | Ollama'nın açık olduğunu kontrol et, sonra ↻ veya Bağlantıyı onar seç. |
 | Ollama 403 | Yardımcıyla onar; düzelmezse 6. adımdaki yardımcısız başlatmayı uygula. |
+| Microsoft Edge yardımcısı atlandı / EPERM | Chrome kurulumu devam eder; son tamamlanma mesajını kontrol et. |
+| Ollama / Kullanıcı vazgeçti (-128) | Eski Mac kurucusu kullanılıyor olabilir. Yeni yardımcıyı kullan; Ollama menüsünden Quit seç ve kurucuda Enter / Devam ile ilerle. |
+| Yanıt dili gönderiyle uyuşmuyor | Eklentinin 0.12.6 olduğunu doğrula; açık X sayfasını ve paneli yenile. Yerel testte doğru modeli seç. Hata sürerse model adını ve örnek gönderiyi bildir. |
+| Node.js indirilemedi | İnterneti kontrol edip yeni kurucuyu yeniden çalıştır. Ayrıntı için kurulum günlüğünü oku. |
 | Model bulunamadı | Modeller bölümünden bir model indir ve seç. |
 | Model zaman aşımı | Küçük model seç, yoğun uygulamaları kapat, model testini tekrar yap. |
 | Extension context invalidated | X sayfasını yenile ve Welo panelini yeniden aç. |
@@ -184,6 +212,8 @@ Eklentiyi **Kaldır** düğmesiyle silmen gerekmez; kaldırmak ayarları kaybett
 
 Gönderiler yorum üretmek için yerel Ollama'ya gönderilir. Ayarlar ve işlem kayıtları Chrome'un yerel uzantı depolamasında tutulur. Model indirmeleri, dış bağlantılar ve X kullanımı internet gerektirir. Bu sürümde Welo lisans sunucusu veya ücretli AI API yoktur.
 
-Gerçek X üzerinde kapsamlı uçtan uca doğrulama tamamlanmadı; son-link beklemesinin kullanıcının ortamındaki kesin nedeni henüz doğrulanmadı. Son değişiklikler test ortamında kontrol edildi; sorunların tüm cihazlarda çözüldüğü garantisi yoktur.
+25 Ekim 2026 kontrolünde Mac üzerinde Qwen 0.8B ve 2B, İngilizce/Türkçe örneklere doğru dilde yanıt verdi. Gemma 1B İngilizce örnekte çalıştı; Türkçe örneklerden birine İngilizce yanıt verdi. Bu nedenle her modelde gönderim öncesi taslağı kontrol et. Kullanıcı son paketin çalıştığını doğruladı; bu, her cihaz ve gönderi için garanti değildir. Kapsamlı canlı X testi yapılmış olduğu iddia edilmez.
 
 [X otomasyon kurallarını](https://help.x.com/en/rules-and-policies/x-automation) incele. Otomatik beğeni ve web arayüzü otomasyonu gibi özellikler bu kurallarla çelişebilir. Hesap güvenliği veya etkileşim artışı garantisi verilmez. Ollama ve modellerin ayrı lisansları vardır.
+
+Resmî sistem gereksinimleri: [Ollama Mac](https://ollama.com/download/mac), [Ollama Windows](https://github.com/ollama/ollama/blob/main/docs/windows.mdx).

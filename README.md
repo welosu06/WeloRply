@@ -1,58 +1,108 @@
-# WeloRply
+# WeloRply · Welo Reply
 
-**X için yerel yapay zekâ yorum asistanı · Local AI replies for X**
-
-**Beta v0.12.4** · Türkçe / English · Windows / macOS (Mac henüz gerçek cihazda test edilmedi)
+**X için yerel yapay zekâ yorum asistanı · Local AI replies for X**  
+**Güncel sürüm / Current version: 0.12.6 beta — 25 Ekim / October 2026**
 
 ## İndir / Download
 
-### [WeloRply.zip indir / Download WeloRply.zip](https://github.com/welosu06/WeloRply/raw/refs/heads/main/WeloRply.zip)
+### [WeloRply.zip — güncel paketi indir / download the current package](https://github.com/welosu06/WeloRply/raw/refs/heads/main/WeloRply.zip)
 
-Chrome içinde uygulamanın adı **Welo Reply** görünür. Dosya adı **WeloRply.zip** olarak kalır.
+Chrome'da eklentinin adı **Welo Reply** görünür. ZIP'in adı **WeloRply.zip**.
 
-**İlk kez kuruyorsan aşağıdaki rehberden başla:**
+- **[Türkçe: adım adım ayrıntılı kurulum](docs/KURULUM-TR.md)**
+- **[English: detailed step-by-step setup](docs/SETUP-EN.md)**
+- [0.12.6 sürüm notları / release notes](CHANGELOG.md)
 
-- **[Türkçe: sıfırdan, tek tek kurulum adımları](docs/KURULUM-TR.md)**
-- **[English: beginner-friendly setup guide](docs/SETUP-EN.md)**
+Doğrudan yukarıdaki paketi indir. **Code → Download ZIP** tüm depoyu indirir; doğrudan eklenti paketi değildir.
 
-GitHub'ın **Code → Download ZIP** düğmesi yerine yukarıdaki doğrudan paket bağlantısını kullan. ZIP'i çıkardıktan sonra Chrome'a `manifest.json` dosyasının bulunduğu klasörü göster.
+## Türkçe — ilk kurulum
 
-Use the package link above rather than GitHub's Code → Download ZIP. Extract it and load the folder containing `manifest.json` in Chrome.
+1. **WeloRply.zip** dosyasını indir ve çıkar. Oluşan klasörü **Belgeler/WeloRply** gibi kalıcı bir yere koy.
+2. Chrome'un adres çubuğuna `chrome://extensions` yaz. Sağ üstte **Geliştirici modu**nu aç.
+3. **Paketlenmemiş öğe yükle** düğmesine bas. Doğrudan `manifest.json` içeren klasörü seç. Listede **Welo Reply 0.12.6** görünmeli.
+4. Chrome'un yapboz/Uzantılar menüsünden Welo'yu sabitle ve simgesine tıklayıp paneli aç.
+5. **Kurulum** bölümünden işletim sistemine uygun resmî **Ollama** indirme bağlantısını aç ve Ollama'yı kur.
+6. Aşağıdaki **Mac** veya **Windows** adımlarını uygula.
+7. Welo'da **Kurulumu kontrol et** düğmesine bas.
+8. **Modeller** bölümünden **bir model** indir ve seç. Üçünü de indirmen gerekmez. İndirme sekmesini tamamlanana kadar açık tut.
+9. **Ayarlar → Yerel modeli dene → Yalnızca yorum üret** ile örnek bir gönderi dene. Bu test X'e yorum göndermez.
+10. X sayfasını yenile. İlk kullanımda **taslak üret**, yorumu oku ve göndermek istiyorsan X üzerinden gönder.
 
-## Bu sürümde / In this version
+### Mac
 
-- Başarılı linkler kuyruktan silinir, sıradakine geçilir. / Successful links are removed as the queue advances.
-- Son linkin sonucu beklenir; işlem sırasında eklenen linkler de alınır. / The final result is awaited and newly added links are included.
-- Model hatası gönderim başlamadan oluşursa bir kez yeniden denenir. / Model errors before sending are retried once.
-- Beklenen aşama gösterilir; yanıtsız görev için süre sınırı vardır. / Progress stages are visible and unresponsive tasks have a timeout.
-- Kurulum yan panel içinde açılır; TR/EN arayüz seçimi korunur. / Setup stays in the side panel with TR/EN interface selection.
+1. Ollama'yı **Uygulamalar / Applications** klasörüne koy ve bir kez aç.
+2. Welo'dan yardımcı paketini indir veya ana pakette **setup/welo-mac.zip** dosyasını bul. Bu ZIP'i de çıkar.
+3. İçindeki **Kur.command** dosyasına çift tıkla. Terminal açılması normaldir; komut yazman gerekmez.
+4. Kurucu isterse üst menü çubuğunda **Ollama → Quit / Çıkış** seç. Sadece uygulama penceresini kapatmak yeterli değildir.
+5. Kurucuya dön ve **Enter** tuşuna bas. **Kurulum tamamlandı** mesajını bekle.
+6. Welo'ya dönüp **Kurulumu kontrol et** seç.
 
-**Kuyruk çalışırken yan panel ve Chrome açık kalmalı; bilgisayar uyumamalı.**
+Node.js gerekiyorsa otomatik hazırlanır. **Welo Kurulum.app** aynı kurucunun pencereli alternatifidir; onunla ilerliyorsan **Kur**, sonra gerekirse **Devam** düğmesini kullan. macOS dosyayı engellerse ve diğer hatalarda [ayrıntılı Mac adımlarına](docs/KURULUM-TR.md#5b-macte-kolay-kurulum) bak.
 
-**Keep the side panel and Chrome open and the computer awake while the queue runs.**
+### Windows
 
-## Nasıl çalışır? / How it works
+1. Ollama'yı kurup Başlat menüsünden aç.
+2. **setup/welo-win.zip** dosyasını veya panelden indirdiğin Windows yardımcısını çıkar.
+3. **Setup.ps1 → sağ tık → PowerShell ile çalıştır** seç. Gerekirse önce **Daha fazla seçenek göster** seçeneğini aç.
+4. Açılan pencerede **Kur ve baslat** düğmesine bas.
+5. Welo'da **Kurulumu kontrol et**, gerekirse **Bağlantıyı onar / Ollama'yı başlat** seç.
 
-Yorum üretimi Ollama üzerinden kullanıcının bilgisayarında yapılır. Model ayrıca indirilir. Bu pakette Welo lisans sunucusu veya ücretli AI API bağlantısı yoktur. İnternet; indirmeler, dış bağlantılar ve X kullanımı için gereklidir.
+Windows yardımcı paketi bu sürümde değiştirilmedi. Betik çalıştırılamıyorsa [yardımcısız bağlantı adımlarını](docs/KURULUM-TR.md#6-yardımcı-olmadan-bağlanma) kullan.
 
-Replies are generated by Ollama on the user's computer. Download a model separately. This build has no Welo license server or paid AI API. Downloads, external links and X actions require internet.
+### Hangi model?
 
-## Beta durumu / Beta status
+| Model | Yaklaşık indirme |
+| --- | --- |
+| Qwen 3.5 · 0.8B | 1,2 GB |
+| Qwen 3.5 · 2B | 2,7 GB |
+| Gemma 3 · 1B | 806 MB |
 
-Küçük modeller hatalı cümleler üretebilir. Yardımcı kurucular imzasızdır. Mac paketi ve gerçek X uçtan uca akışları kapsamlı biçimde doğrulanmadı. Son linkte bildirilen takılmanın kesin nedeni kullanıcı ortamında henüz doğrulanmadı; son sürümün testleri simülasyonda geçti.
+Boyutlar sürüme göre değişebilir. Model dosyası Welo ZIP'inin içinde değildir; Ollama ayrıca indirir. Her modelde yorumun dilini ve içeriğini kontrol et. TR/EN seçimi yalnızca arayüz dilini değiştirir.
 
-Small models can produce incorrect replies. Helper installers are unsigned. Real-Mac and comprehensive live-X testing remain pending. The reported final-link stall has not been conclusively diagnosed on the user's machine; recent tests used simulations.
+### Zaten kuruluysa güncelle
 
-[X otomasyon kuralları / X automation rules](https://help.x.com/en/rules-and-policies/x-automation) geçerlidir. Otomatik beğeni ve web otomasyonu gibi özellikler bu kurallarla çelişebilir. Hesap güvenliği veya etkileşim garantisi yoktur.
+1. Kuyruğu durdur ve devam eden gönderimin sonucunu kontrol et.
+2. Yeni ZIP'i ayrı bir yere çıkar.
+3. İçindeki dosyaları mevcut Welo eklenti klasörüne kopyala; aynı adlı dosyaları değiştir.
+4. `chrome://extensions` ekranında **Welo Reply → Yenile** seç ve sürümün **0.12.6** olduğunu kontrol et.
+5. Açık X sekmelerini yenile; paneli kapatıp aç.
+6. Eski Mac yardımcısı varsa yeni yardımcıyı bir kez çalıştır. v4 yardımcısı zaten kurulu ve bağlantı çalışıyorsa tekrar kurman gerekmez. Modelleri yeniden indirme.
 
-Features such as automated likes and website automation may conflict with X rules. No account-safety or engagement guarantees are made.
+Eklentiyi kaldırmadan güncelleyebilirsin. GitHub'dan kurulan eklenti otomatik güncellenmez. Kurulum klasörünü silme veya taşıma.
 
-## Yardım / Help
+## English — quick start
 
-[Issues üzerinden sorun bildir / Report a problem](https://github.com/welosu06/WeloRply/issues). İşletim sistemi, model, sürüm ve hata metnini belirt. Şifre veya oturum bilgisi paylaşma. Include OS, model, version and the exact error; never include passwords or session credentials.
+1. Download **WeloRply.zip** above and extract it into a permanent folder.
+2. Open `chrome://extensions`, enable **Developer mode**, and choose **Load unpacked**.
+3. Select the folder directly containing `manifest.json`; verify **Welo Reply 0.12.6**.
+4. Pin Welo, open its panel, and choose **Setup**. Install Ollama from the official link for your OS.
+5. **Mac:** extract **setup/welo-mac.zip**, double-click **Kur.command**, and follow its prompts. If asked, quit Ollama from its menu bar icon, then press Enter in the installer. Node.js is prepared automatically when needed.
+6. **Windows:** extract **setup/welo-win.zip**, run **Setup.ps1** with PowerShell, and choose **Kur ve baslat** (Install and start).
+7. In Welo, choose **Check setup**, download one model, and run **Settings → Test the local model → Generate a reply only**.
+8. Refresh X and review a draft before posting.
+
+For upgrades, replace the files in the original extension folder, reload Welo at `chrome://extensions`, and refresh X. Keep existing model downloads. See the [full English guide](docs/SETUP-EN.md) for prerequisites, detailed steps, Mac opening permissions, troubleshooting and manual setup.
+
+## Bu sürüm / This version
+
+- Mac'te Node.js gerektiğinde otomatik indirilip doğrulanır. / Node.js is downloaded and verified when needed on Mac.
+- Edge klasör izni Chrome kurulumunu durdurmaz. / Edge folder permissions no longer abort Chrome setup.
+- Ollama yeniden başlatılacaksa kurucu açık çıkış adımlarıyla devam eder. / Setup guides the user through quitting Ollama when a restart is needed.
+- Mac'teki Qwen modellerinde dil talimatları ve tekrar deneme düzeltildi. / Mac Qwen language instructions and retry feedback were corrected.
+- Windows üretim davranışı ve Gemma 1B'nin mevcut davranışı korundu. / Windows generation and existing Gemma 1B behavior were preserved.
+
+Üç modelle gerçek Mac üzerinde yerel yanıt üretimi kontrol edildi; kullanıcı son paketin çalıştığını doğruladı. Bu, her cihaz ve gönderide hatasız sonuç garantisi değildir. Küçük modeller yanlış dil veya içerik üretebilir; ayrıntılı test kapsamı [sürüm notlarında](CHANGELOG.md).
+
+All three models were checked through local generation on a real Mac, and the user confirmed the package works. Small models can still produce language or content errors; see the [release notes](CHANGELOG.md) for scope.
+
+## Kullanım ve yardım / Use and help
+
+- **Kuyruk çalışırken Chrome'u ve yan paneli açık, bilgisayarı uyanık tut.** / Keep Chrome and the side panel open and the computer awake during queue processing.
+- **Başlat** ve **hemen gönder** yorum yayımlar; taslak/yerel test farklıdır. / Queue Start and immediate-send actions publish replies; draft/local-test actions are different.
+- Belirsiz gönderimi tekrarlamadan önce X'te kontrol et. / Check X before retrying an uncertain send.
+- Yorum üretimi yerel Ollama üzerinden yapılır. Model indirme ve X işlemleri internet ister. / Generation uses local Ollama; downloads and X actions need internet.
+- [Sorun bildir / Report an issue](https://github.com/welosu06/WeloRply/issues): işletim sistemi, Welo sürümü, model ve hata metnini ekle; şifre veya oturum bilgisi paylaşma.
 
 Paket bütünlüğü / Package checksum: [SHA256SUMS.txt](SHA256SUMS.txt).
 
-Bu depo hazır paket ve belgeleri dağıtır. Geliştirme çalışma alanı dahil değildir; eklentinin çalışması için gereken JavaScript dosyaları ZIP'te bulunur. Ollama ve modellerin ayrı lisansları vardır.
-
-This repository distributes the package and documentation, not the development workspace. The ZIP includes the JavaScript required by the extension. Ollama and downloaded models have their own licenses.
+Bu depo hazır paket ve belgeleri dağıtır; gerekli JavaScript ZIP'in içindedir. Yardımcı kurucular imzasızdır. Ollama ve modellerin ayrı lisansları vardır. [X otomasyon kurallarını](https://help.x.com/en/rules-and-policies/x-automation) incele.
