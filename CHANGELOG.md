@@ -1,5 +1,18 @@
 # Sürüm notları / Release notes
 
+## 0.12.11 beta — 2026-10-27
+
+- Hedef gönderinin hemen altındaki satır içi yanıt kutusu desteklenir; yalnızca açılır pencereye bağlı kalınmaz.
+- Başka gönderinin kutusu ve mevcut taslak korunur. Satır içi gönderim yalnızca kutu temizlendiğinde ve yeni yorum sayfada göründüğünde başarılı sayılır.
+- Browser fixtures passed: inline reply, clear without confirmation, wrong post, existing draft, and the previous five DOM readiness scenarios. Live X failures have not been reproduced; this release addresses a confirmed missing composer path, not a proven diagnosis of those two links.
+
+## 0.12.10 beta — 2026-10-27
+
+- Wait for post text and reply controls before generation; reacquire the target post after a page re-render.
+- Distinct errors for post loading, composer opening, send-button readiness and unconfirmed submission. No automatic retry after uncertain sending.
+- Browser fixtures cover delayed post/text, replaced post, missing composer and unconfirmed send. The reported live X failure remains unverified.
+
+
 ## 0.12.9 beta — 2026-10-27
 
 - Link kuyruğunda sekmenin açılıp yorumun başlamamasına neden olan sabit sürüm kontrolü düzeltildi. Panel ve içerik betiği sürümü manifestten okur.
