@@ -1,5 +1,11 @@
 # Sürüm notları / Release notes
 
+## 0.12.12 beta — 2026-10-28
+
+- Gönderi butonundan açılan görev sekmesi yorum ve isteğe bağlı beğeni işlemi bitince otomatik kapanır. Ana sekme korunur; hatalı görev sekmesi inceleme için açık kalır.
+- Completed toolbar reply tasks now close their worker tab. Completion is persisted before closing; late completion messages cannot overwrite the result.
+- Validation: mocked background lifecycle test covers successful closure, preserved failed task, origin notification and late message rejection. No live X post was sent.
+
 ## 0.12.11 beta — 2026-10-27
 
 - Hedef gönderinin hemen altındaki satır içi yanıt kutusu desteklenir; yalnızca açılır pencereye bağlı kalınmaz.
