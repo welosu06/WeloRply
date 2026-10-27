@@ -1,5 +1,13 @@
 # Sürüm notları / Release notes
 
+## 0.12.9 beta — 2026-10-27
+
+- Link kuyruğunda sekmenin açılıp yorumun başlamamasına neden olan sabit sürüm kontrolü düzeltildi. Panel ve içerik betiği sürümü manifestten okur.
+- Kurulum iki ayrı numaralı kartla gösterilir: Ollama ve Welo bağlantısı. Zorunlu etiketleri ve ayrı indirme düğmeleri eklendi.
+- Fixed a stale version check that prevented queued replies from starting. Both sides now read the manifest version. Setup now separates Ollama and Welo connection into clear numbered steps.
+- Validation: nine queue scenarios, timeout/cancellation transport tests and actual content-script version responses passed. No live X reply was posted during testing.
+
+
 ## 0.12.8 beta — 2026-10-27
 
 - Windows kurucusu açıldığında otomatik başlar; panel kurulumu algılar, bağlantıyı onarır ve hazır durumunu gösterir. Tekrar düğmeye basmak gerekmez. İlk dosyayı kullanıcı açmalıdır.

@@ -1,6 +1,6 @@
 # WeloRply kurulumu — adım adım
 
-**Sürüm: 0.12.8 beta.** Eklentinin Chrome'daki adı **Welo Reply** olarak görünür. İndirdiğin dosyanın adı **WeloRply.zip**. İkisi aynı uygulamadır.
+**Sürüm: 0.12.9 beta.** Eklentinin Chrome'daki adı **Welo Reply** olarak görünür. İndirdiğin dosyanın adı **WeloRply.zip**. İkisi aynı uygulamadır.
 
 Bilgisayar konusunda deneyimli olman gerekmiyor. Aşağıdaki sırayı izle. Bir adımın sonunda yazan sonucu görmeden sonraki adıma geçme.
 
@@ -42,7 +42,7 @@ Mac kurulum düzeltmeleri gerçek kullanıcı cihazında denendi; üç modelle y
 5. Bir önceki adımda çıkardığın, içinde `manifest.json` bulunan klasörü seç.
 6. **Klasör seç / Aç** düğmesine bas.
 
-**Sonuç:** Uzantılar sayfasında **Welo Reply**, sürüm **0.12.8** görünmeli. Etkinleştirme anahtarı açık olmalı.
+**Sonuç:** Uzantılar sayfasında **Welo Reply**, sürüm **0.12.9** görünmeli. Etkinleştirme anahtarı açık olmalı.
 
 “Manifest dosyası eksik” hatası çıkarsa yanlış klasörü seçmişsindir. Seçtiğin klasörün bir altındaki klasörü kontrol et. `manifest.json` dosyasını açman değil, dosyanın bulunduğu klasörü seçmen gerekiyor.
 
@@ -173,7 +173,7 @@ Son linkin sonucu gelmeden “Tamamlandı” gösterilmez. Hatalı link kalırsa
 2. Yeni **WeloRply.zip** dosyasını indir ve ayrı bir geçici klasöre çıkar.
 3. Yeni dosyaları Chrome'a daha önce gösterdiğin kalıcı Welo klasörünün içine kopyala; aynı adlı dosyaları değiştir. Yeni klasörü eski klasörün içine iç içe yerleştirme.
 4. `chrome://extensions` sayfasında Welo kartının **Yenile** düğmesine bas.
-5. Sürümün **0.12.8** olduğunu kontrol et.
+5. Sürümün **0.12.9** olduğunu kontrol et.
 6. Açık X sekmelerini yenile, Welo panelini kapatıp yeniden aç.
 
 Mac'te eski yardımcı kuruluysa yeni paketin **setup/welo-mac.zip** dosyasını çıkarıp kurucuyu bir kez çalıştır; böylece yardımcı düzeltmeleri de yüklenir. v4 düzeltme paketindeki yardımcı zaten kuruluysa ve bağlantı çalışıyorsa tekrar kurman gerekmez. Kurulu modelleri yeniden indirme.
@@ -190,7 +190,7 @@ Eklentiyi **Kaldır** düğmesiyle silmen gerekmez; kaldırmak ayarları kaybett
 | Ollama 403 | Yardımcıyla onar; düzelmezse 6. adımdaki yardımcısız başlatmayı uygula. |
 | Microsoft Edge yardımcısı atlandı / EPERM | Chrome kurulumu devam eder; son tamamlanma mesajını kontrol et. |
 | Ollama / Kullanıcı vazgeçti (-128) | Eski Mac kurucusu kullanılıyor olabilir. Yeni yardımcıyı kullan; Ollama menüsünden Quit seç ve kurucuda Enter / Devam ile ilerle. |
-| Yanıt dili gönderiyle uyuşmuyor | Eklentinin 0.12.8 olduğunu doğrula; açık X sayfasını ve paneli yenile. Yerel testte doğru modeli seç. Hata sürerse model adını ve örnek gönderiyi bildir. |
+| Yanıt dili gönderiyle uyuşmuyor | Eklentinin 0.12.9 olduğunu doğrula; açık X sayfasını ve paneli yenile. Yerel testte doğru modeli seç. Hata sürerse model adını ve örnek gönderiyi bildir. |
 | Node.js indirilemedi | İnterneti kontrol edip yeni kurucuyu yeniden çalıştır. Ayrıntı için kurulum günlüğünü oku. |
 | Model bulunamadı | Modeller bölümünden bir model indir ve seç. |
 | Model zaman aşımı | Küçük model seç, yoğun uygulamaları kapat, model testini tekrar yap. |
