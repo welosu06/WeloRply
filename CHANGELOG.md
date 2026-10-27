@@ -1,5 +1,10 @@
 # Sürüm notları / Release notes
 
+## 0.12.13 beta — 2026-10-28
+
+- Yan panelin başına Ctrl + Shift + R düğmesi eklendi. Açık sekmeyi önbelleği atlayarak yeniler; TR/EN durum mesajları gösterir.
+- Added an active-tab hard reload button at the top of the side panel.
+
 ## 0.12.12 beta — 2026-10-28
 
 - Gönderi butonundan açılan görev sekmesi yorum ve isteğe bağlı beğeni işlemi bitince otomatik kapanır. Ana sekme korunur; hatalı görev sekmesi inceleme için açık kalır.
