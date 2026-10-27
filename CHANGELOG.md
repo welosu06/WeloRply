@@ -1,5 +1,11 @@
 # Sürüm notları / Release notes
 
+## 0.12.14 beta — 2026-10-28
+
+- Başarılı görev sekmesi ana sekmeden bildirim yanıtı beklemeden kapatılır. Kapatma başarısızsa bir kez yeniden denenir; kalıcı hata artık gizlenmez.
+- Completion no longer waits for the origin tab notification. Failed tab removal is retried once and reported; rejected completion messages are surfaced.
+- Validation: lifecycle regression and hanging origin, transient close failure, permanent close failure simulations passed. Live X reproduction remains unverified.
+
 ## 0.12.13 beta — 2026-10-28
 
 - Yan panelin başına Ctrl + Shift + R düğmesi eklendi. Açık sekmeyi önbelleği atlayarak yeniler; TR/EN durum mesajları gösterir.
