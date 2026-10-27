@@ -1,5 +1,14 @@
 # Sürüm notları / Release notes
 
+## 0.12.7 beta — 2026-10-27
+
+- Windows: eklentide kur/onar düğmesi ve terminal gerektirmeyen EXE kurucusu. Erişim izni kullanıcı ayarlarına kaydedilir. İlk kurucu kullanıcı tarafından açılır.
+- X makale başlığı ve gövdesi için metin okuma desteği.
+- GitHub’daki Mac yardımcısı ve model dili düzeltmeleri korundu.
+- Windows setup/repair button, GUI installer and persisted origin permission; article text extraction. Existing Mac fixes preserved.
+- Validation: compiled helper protocol, setup-button branches and article extraction fixtures passed. Live Windows repair and the reported X article remain unverified.
+
+
 ## 0.12.6 beta — 2026-10-25
 
 ### Türkçe
@@ -25,3 +34,4 @@
 6. Turkish and English setup, update and troubleshooting guides were revised; extension version labels now read 0.12.6.
 
 **Validation scope:** Six local generations on a real Mac: one English and one Turkish example for each model. Both Qwen models used the expected language. Gemma 1B worked on English but answered the Turkish sample in English. The user confirmed the current package works. No comments were posted to X during these tests. Language/retry handling, Windows equivalence and installer failure cases were also checked with automated tests.
+
