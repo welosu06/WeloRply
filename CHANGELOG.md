@@ -1,5 +1,11 @@
 # Sürüm notları / Release notes
 
+## 0.12.15 beta — 2026-10-28
+
+- Görev başladıktan sonra gelen yükleniyor bildiriminin görevi yanlışlıkla kesildi olarak işaretlemesi düzeltildi. Görev, onu başlatan sayfanın documentId değeriyle eşleştirilir.
+- Late loading events no longer interrupt an assigned task. Navigation completion probes the original document; a new document cannot claim or complete the old task.
+- Validation: simulated claim → loading → completion closes the worker; wrong-document completion is rejected and real document replacement interrupts the task. Existing close retry tests passed. Live X behavior remains unverified.
+
 ## 0.12.14 beta — 2026-10-28
 
 - Başarılı görev sekmesi ana sekmeden bildirim yanıtı beklemeden kapatılır. Kapatma başarısızsa bir kez yeniden denenir; kalıcı hata artık gizlenmez.
