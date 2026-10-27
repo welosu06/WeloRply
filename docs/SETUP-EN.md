@@ -1,6 +1,6 @@
 # WeloRply — step-by-step installation
 
-**Beta v0.12.7.** The download is named **WeloRply.zip**. Chrome currently displays the extension as **Welo Reply**. They are the same application.
+**Beta v0.12.8.** The download is named **WeloRply.zip**. Chrome currently displays the extension as **Welo Reply**. They are the same application.
 
 You will install two separate components: the Welo Chrome extension, and Ollama with a local model. The model is downloaded separately; it is not inside the extension ZIP.
 
@@ -26,7 +26,7 @@ Opening a ZIP to browse its contents is not the same as extracting it. Keep the 
 2. Turn on **Developer mode** at the top right.
 3. Click **Load unpacked**.
 4. Select the extracted folder containing `manifest.json`, then click **Select folder / Open**.
-5. Confirm **Welo Reply**, version **0.12.7**, is listed and enabled.
+5. Confirm **Welo Reply**, version **0.12.8**, is listed and enabled.
 
 If Chrome reports a missing manifest, select the inner folder that directly contains `manifest.json`. Select the folder, not the JSON file or ZIP.
 
@@ -44,9 +44,9 @@ Official download links can open separate tabs when you click them.
 
 Install Ollama from its official Windows page, then:
 
-1. In Welo, choose **Setup → Set up / repair automatic connection**.
-2. If no helper is installed, **WeloBaglantiKur.exe** downloads. Open it and click **Kur ve baglan (Install and connect)**. You must open the first installer yourself.
-3. Return to Welo and click the same button again. An installed helper is repaired directly. To update an older helper, run **setup/WeloBaglantiKur.exe** from the main ZIP once.
+1. In Welo, choose **Setup → Install and connect**.
+2. If no helper is installed, **WeloBaglantiKur.exe** downloads. Open it; installation starts automatically. You must open the first installer yourself.
+3. Welo detects the installation and prepares the connection automatically. An installed helper is repaired directly. To update an older helper, run **setup/WeloBaglantiKur.exe** from the main ZIP once.
 4. Refresh the model list and select your existing model. No Terminal or model re-download is needed.
 
 Repair may restart Ollama and interrupt active requests. The new installer registers the helper for Chrome to start on demand. Installers are unsigned; do not disable system-wide security.
@@ -142,7 +142,7 @@ The queue waits for the final reply result. A remaining failed link produces an 
 1. Stop the queue and check any active send result.
 2. Download the new ZIP and extract it to a temporary folder.
 3. Copy its contents into the same permanent extension folder you originally loaded. Replace matching files; do not nest a new folder inside the old one.
-4. Open `chrome://extensions`, click Welo's **Reload** button, and verify version **0.12.7**.
+4. Open `chrome://extensions`, click Welo's **Reload** button, and verify version **0.12.8**.
 5. Refresh open X tabs, then close and reopen the side panel.
 
 If an older Mac helper is installed, extract the new **setup/welo-mac.zip** and run its installer once to update it. If you already installed the v4 helper and the connection works, there is no need to reinstall it. Keep your existing model downloads.
@@ -159,7 +159,7 @@ Do not remove the extension merely to update it; removal may erase settings. Thi
 | 403 | Try repair; otherwise follow the manual connection method above. |
 | Edge skipped / EPERM | Chrome setup continues; check the final completion message. |
 | Ollama / User cancelled (-128) | Use the latest Mac helper. Quit Ollama from its menu bar icon, then press Enter / Continue in the installer. |
-| Reply language does not match | Confirm version 0.12.7, refresh X and reopen Welo. Test the selected model locally; report the model and sample post if it persists. |
+| Reply language does not match | Confirm version 0.12.8, refresh X and reopen Welo. Test the selected model locally; report the model and sample post if it persists. |
 | Node.js download failed | Check the connection and retry the new installer. Read the installation log for details. |
 | No model | Download and select a local model. |
 | Model timeout | Try a smaller model, close heavy apps, and repeat the local test. |

@@ -1,5 +1,12 @@
 # Sürüm notları / Release notes
 
+## 0.12.8 beta — 2026-10-27
+
+- Windows kurucusu açıldığında otomatik başlar; panel kurulumu algılar, bağlantıyı onarır ve hazır durumunu gösterir. Tekrar düğmeye basmak gerekmez. İlk dosyayı kullanıcı açmalıdır.
+- Panel yeniden açıldığında bekleyen kurulum takibi sürer.
+- Windows installer starts on opening; the panel detects installation and prepares the connection automatically. Reopening the panel resumes waiting.
+- Real Windows helper registration and native connection call passed. Download/poll/resume flow passed browser fixtures. The Chrome download and Windows security prompt were not tested end-to-end.
+
 ## 0.12.7 beta — 2026-10-27
 
 - Windows: eklentide kur/onar düğmesi ve terminal gerektirmeyen EXE kurucusu. Erişim izni kullanıcı ayarlarına kaydedilir. İlk kurucu kullanıcı tarafından açılır.
