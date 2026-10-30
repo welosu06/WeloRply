@@ -1,5 +1,16 @@
 # Sürüm notları / Release notes
 
+## 0.12.17 beta — 2026-10-30
+
+- Takılı kalan görev 5 dakika (+ bekleme süresi) sonra kesildi olarak işaretlenir ve yeni görevi engellemez.
+- Görev veya kuyruk penceresi küçültülürse otomatik olarak geri açılır (öne gelmeden).
+- Stuck tasks expire after 5 minutes plus the pacing wait; minimized work windows are restored automatically without stealing focus.
+
+## 0.12.16 beta — 2026-10-30
+
+- Görev ve kuyruk sekmeleri artık arka plan sekmesi yerine odak almayan ayrı bir pencerede açılır. Chrome gizli sekmelerde X'i çizmediği için işlem sekmeye tıklanana kadar başlamıyordu.
+- Task and queue tabs now open in a separate unfocused window instead of a background tab, so X renders and the task starts without clicking. Do not minimize that window.
+
 ## 0.12.15 beta — 2026-10-28
 
 - Görev başladıktan sonra gelen yükleniyor bildiriminin görevi yanlışlıkla kesildi olarak işaretlemesi düzeltildi. Görev, onu başlatan sayfanın documentId değeriyle eşleştirilir.

@@ -1,7 +1,7 @@
 # WeloRply · Welo Reply
 
 **X için yerel yapay zekâ yorum asistanı · Local AI replies for X**  
-**Güncel sürüm / Current version: 0.12.15 beta — 25 Ekim / October 2026**
+**Güncel sürüm / Current version: 0.12.17 beta — 30 Ekim / October 2026**
 
 ## İndir / Download
 
@@ -11,7 +11,7 @@ Chrome'da eklentinin adı **Welo Reply** görünür. ZIP'in adı **WeloRply.zip*
 
 - **[Türkçe: adım adım ayrıntılı kurulum](docs/KURULUM-TR.md)**
 - **[English: detailed step-by-step setup](docs/SETUP-EN.md)**
-- [0.12.15 sürüm notları / release notes](CHANGELOG.md)
+- [0.12.17 sürüm notları / release notes](CHANGELOG.md)
 
 Doğrudan yukarıdaki paketi indir. **Code → Download ZIP** tüm depoyu indirir; doğrudan eklenti paketi değildir.
 
@@ -19,7 +19,7 @@ Doğrudan yukarıdaki paketi indir. **Code → Download ZIP** tüm depoyu indiri
 
 1. **WeloRply.zip** dosyasını indir ve çıkar. Oluşan klasörü **Belgeler/WeloRply** gibi kalıcı bir yere koy.
 2. Chrome'un adres çubuğuna `chrome://extensions` yaz. Sağ üstte **Geliştirici modu**nu aç.
-3. **Paketlenmemiş öğe yükle** düğmesine bas. Doğrudan `manifest.json` içeren klasörü seç. Listede **Welo Reply 0.12.15** görünmeli.
+3. **Paketlenmemiş öğe yükle** düğmesine bas. Doğrudan `manifest.json` içeren klasörü seç. Listede **Welo Reply 0.12.17** görünmeli.
 4. Chrome'un yapboz/Uzantılar menüsünden Welo'yu sabitle ve simgesine tıklayıp paneli aç.
 5. **Kurulum** bölümünden işletim sistemine uygun resmî **Ollama** indirme bağlantısını aç ve Ollama'yı kur.
 6. Aşağıdaki **Mac** veya **Windows** adımlarını uygula.
@@ -63,7 +63,7 @@ Boyutlar sürüme göre değişebilir. Model dosyası Welo ZIP'inin içinde değ
 1. Kuyruğu durdur ve devam eden gönderimin sonucunu kontrol et.
 2. Yeni ZIP'i ayrı bir yere çıkar.
 3. İçindeki dosyaları mevcut Welo eklenti klasörüne kopyala; aynı adlı dosyaları değiştir.
-4. `chrome://extensions` ekranında **Welo Reply → Yenile** seç ve sürümün **0.12.15** olduğunu kontrol et.
+4. `chrome://extensions` ekranında **Welo Reply → Yenile** seç ve sürümün **0.12.17** olduğunu kontrol et.
 5. Açık X sekmelerini yenile; paneli kapatıp aç.
 6. Eski Mac yardımcısı varsa yeni yardımcıyı bir kez çalıştır. v4 yardımcısı zaten kurulu ve bağlantı çalışıyorsa tekrar kurman gerekmez. Modelleri yeniden indirme.
 
@@ -73,7 +73,7 @@ Eklentiyi kaldırmadan güncelleyebilirsin. GitHub'dan kurulan eklenti otomatik 
 
 1. Download **WeloRply.zip** above and extract it into a permanent folder.
 2. Open `chrome://extensions`, enable **Developer mode**, and choose **Load unpacked**.
-3. Select the folder directly containing `manifest.json`; verify **Welo Reply 0.12.15**.
+3. Select the folder directly containing `manifest.json`; verify **Welo Reply 0.12.17**.
 4. Pin Welo, open its panel, and choose **Setup**. Install Ollama from the official link for your OS.
 5. **Mac:** extract **setup/welo-mac.zip**, double-click **Kur.command**, and follow its prompts. If asked, quit Ollama from its menu bar icon, then press Enter in the installer. Node.js is prepared automatically when needed.
 6. **Windows:** choose Setup → Install and connect. Open the downloaded WeloBaglantiKur.exe once. Installation starts automatically and Welo detects when the connection is ready.
@@ -84,6 +84,8 @@ For upgrades, replace the files in the original extension folder, reload Welo at
 
 ## Bu sürüm / This version
 
+- Görev ve kuyruk sekmeleri odak almayan ayrı bir pencerede açılır; artık sekmeye tıklamadan başlar. / Tasks open in an unfocused window and start without clicking the tab.
+- Küçültülen görev penceresi otomatik geri açılır; takılı görev 5 dakika sonra yeni görevi engellemez. / Minimized work windows are restored; stuck tasks expire after 5 minutes.
 - Mac'te Node.js gerektiğinde otomatik indirilip doğrulanır. / Node.js is downloaded and verified when needed on Mac.
 - Edge klasör izni Chrome kurulumunu durdurmaz. / Edge folder permissions no longer abort Chrome setup.
 - Ollama yeniden başlatılacaksa kurucu açık çıkış adımlarıyla devam eder. / Setup guides the user through quitting Ollama when a restart is needed.
